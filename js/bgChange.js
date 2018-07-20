@@ -1,11 +1,5 @@
-/*
- * Created by aco on 2016/9/1.
- */
-
-
 (function($) {
 
-    // 预加载图片
     $.preLoad = function(arr) {
         arr = (typeof arr != "object") ? [arr] : arr;
 
@@ -31,7 +25,6 @@
         return defer.promise();
     };
 
-    // 用于获取随机值
     $.randomI = function(min, max) {
         return Math.floor(Math.random() * (max - min) + min);
     };
@@ -49,7 +42,6 @@
 
         options = $.extend(defaults, options);
 
-        // 根据所给的行列生产一系列的运动形式
         var methods = [{
             tDuration: '1s',
             sDuration: '140',
@@ -364,13 +356,10 @@
             }
         }];
 
-        // 预定义的动画效果
         var className = 'start-change';
         var wrap = $(_this);
         var html = '';
 
-        // 生成 DOM 节点
-        // 根据是否使用 scss 文件来动态添加 DOM 节点
         if (options.scss || (options.row == 7 && options.col == 9)) {
             for (var i = 1; i <= options.row; i++) {
                 for (var j = 1; j <= options.col; j++) {
@@ -418,29 +407,23 @@
                 });
         }
 
-        // 防止动画未结束被再次调用
         var lock = false;
 
-        // 防止同一张图片连续显示
         var imgIndexTmp = -1,
             imgIndex = -1;
 
         function change(method, addClass) {
 
-            // 防止动画未结束被再次调用
             if (lock) return;
             lock = true;
 
-            // 若无参数则随机生产运动形式
             method = method || methods[$.randomI(0, methods.length)];
             addClass = addClass || className;
 
-            // 每个块的动画的持续时间，由于运动形式不一样，持续时间也不一致
             _this.find('.animation-item').css({
                 'transition': method.tDuration
             });
 
-            // 防止同一张图片连续显示
             do {
                 imgIndex = $.randomI(0, arr.length);
             } while (imgIndex === imgIndexTmp);
@@ -449,7 +432,6 @@
             var img = arr[imgIndex];
             method.init();
 
-            // 触发动画开始事件
             _this.trigger('changeStart');
             var timer = setInterval(function() {
                 for (var i = 1; i <= options.row; i++) {
@@ -468,7 +450,6 @@
                     _this.find('.animation-item').data('change', 0);
                     setTimeout(function() {
                         _this.find('.animation-item').removeClass(method.duration);
-                        // 触发动画结束事件，同时打开锁
                         _this.trigger('changeEnd');
                         lock = false;
                     }, 2000);
