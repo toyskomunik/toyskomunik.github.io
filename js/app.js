@@ -47,32 +47,8 @@ function interval(time) {
     }
 }
 
-bgAnimation({ele: '#bgPicture'}, interval(10000));
+// bgAnimation({ele: '#bgPicture'}, interval(10000));
 
 $(function() {
     $('.jump').html(`<span>${$('.jump').text().split('').join('</span><span>')}</span>`);  
 });
-
-const speech = function(){
-  const recognition = new webkitSpeechRecognition();
-        recognition.continuous = true;
-        recognition.interimResults = true;
-
-  recognition.onresult = function(event) {
-    const colour = event.results[event.results.length - 1][0].transcript;
-    $('body').css('background-color', colour.toLowerCase().replace(/\s/gi,''));
-  }
-
-  recognition.onerror = function(event) {
-    console.log(event.error);
-  }
-
-  recognition.start();
-}
-
-if (!('webkitSpeechRecognition' in window)) {
-  alert("Sorry you require a browser that supports speech recognition");
-}
-else {
-  speech();
-}

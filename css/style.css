@@ -6,6 +6,7 @@
 :root{
   --background-color: #1C0D45;
   --highlight: #34EFFF;
+  --background-gradient: linear-gradient(135deg, #2B2370, #221457, #1B0D43);
 }
 
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,600");
@@ -54,7 +55,8 @@ ol, ul {
 }
 
 body {
-  background-color: var(--background-color, #1C0D45);
+  /*background-color: var(--background-color, #1C0D45);*/
+  background: var(--background-gradient);
   border-style: none;
 }
 
@@ -111,6 +113,9 @@ body.fullsingle p {
   height: 100vh;
   background-size: cover;
   background-position: center center; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @media (max-width: 800px) {
   .fs .bgPicture {
@@ -166,6 +171,7 @@ body.fullsingle p {
 }
 .intro .tagline {
   color: #CCCCCC;
+  margin-left: -5px;
 }
 @media (max-width: 800px) {
   .intro h1 {
@@ -359,5 +365,6 @@ body.fullsingle p {
 }
 
 .jump span.up, .jump span:hover {
-  top: -20px;
+  top: -10px;
+  /*font-size: 110%;*/
 }
