@@ -1,4 +1,4 @@
-const pictures = [
+/*const pictures = [
     'img/21107407_1452572824822618_1406297881849102336_n.jpg',
     'img/21149736_504061336604528_7326814684823158784_n.jpg',
     'img/25008862_1560443747373707_7245417057334853632_n.jpg',
@@ -45,7 +45,7 @@ function interval(time) {
             changeEle.change();
         }, time);
     }
-}
+}*/
 
 // bgAnimation({ele: '#bgPicture'}, interval(10000));
 
