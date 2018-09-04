@@ -350,14 +350,12 @@ body.fullsingle p {
 .lists {
   display: flex;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: space-between;
   flex-wrap: wrap;
-  margin-left: -20px;
 }
 @media (max-width: 800px) {
   .lists {
     justify-content: space-around;
-    padding: 0 20px;
   }
 }
 .lists > * {
@@ -373,6 +371,7 @@ body.fullsingle p {
   flex: 0;
   width: 40px;
   height: 40px;
+  box-shadow: 3px 6px 15px rgba(0, 0, 0, .2);
   transition: all ease 500ms;
   cursor: pointer;
 }
