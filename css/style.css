@@ -70,72 +70,70 @@ a:hover {
   box-shadow: none;
 }
 
-@keyframes fadein {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 body.fullsingle {
   font-weight: 400;
   font-size: 21px;
   line-height: 33px;
   letter-spacing: -0.2px;
   color: #848d96;
-  animation: fadein 2s;
 }
 body.fullsingle p {
   color: #848d96;
 }
 
 .fs {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-}
-@media (max-width: 800px) {
-  .fs {
-    height: auto;
-    flex-wrap: wrap;
-  }
-}
-.fs .bgPicture {
-  width: 50%;
-  height: 100vh;
-  background-size: cover;
-  background-position: center center; 
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 800px) {
+  .fs {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+}
+.fs .bgPicture {
+  min-height: 100vh;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center center; 
+  opacity: 0;
 }
 .fs .bgPicture img {
   margin: 0 15px;
 }
 @media (max-width: 800px) {
   .fs .bgPicture {
+    /*min-height: inherit;*/
+    margin: 0 20px;
+  }
+  .fs .bgPicture img {
     width: 100%;
+    height: auto;
   }
 }
 .fs .content {
-  width: 50%;
   min-height: 100vh;
+  max-width: 0;
+  max-height: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 1;
   overflow: auto;
+  opacity: 0;
 }
 @media (max-width: 800px) {
   .fs .content {
-    width: 100%;
+    
     height: auto;
   }
 }
 .fs .content .content-vertically-center {
   padding: 80px;
-  max-width: 640px;
   margin-top: auto;
   margin-bottom: auto;
 }
@@ -152,22 +150,22 @@ body.fullsingle p {
 }
 
 .intro .title {
-  margin-left: -90px;
+  margin-left: -70px;
   text-transform: uppercase;
   color: var(--highlight, #F012B8);
-  font-size: 160px;
+  font-size: 130px;
   font-weight: 900;
   line-height: 164px;
 }
 @media (max-width: 1200px) {
   .intro .title {
-    font-size: 110px;
+    font-size: 100px;
     margin: 0 auto;
   }
 }
 @media (max-width: 800px) {
   .intro .title {
-    font-size: 80px;
+    font-size: 75px;
     margin: 0 auto;
   }
 }
@@ -234,7 +232,7 @@ body.fullsingle p {
   margin-bottom: 20px;
   font-size: 16px;
   font-weight: 300;
-  line-height: 32px;
+  line-height: 26px;
   text-align: justify;
 }
 .bio a {
@@ -380,7 +378,7 @@ body.fullsingle p {
 }
 
 .credit {
-  margin-top: 20px;
+  margin: 20px 0;
   opacity: 0.4;
 }
 .credit p {
