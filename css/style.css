@@ -207,11 +207,13 @@ body.fullsingle p {
     justify-content: space-between;
   }
 }
-.intro .tagline span.separator {
+.intro .tagline .separator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 15px;
-  font-size: 10px;
 }
-.intro .tagline span.separator > * {
+.intro .tagline .separator > * {
   flex: 0;
 }
 
