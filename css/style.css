@@ -212,6 +212,8 @@ body.fullsingle p {
   justify-content: center;
   align-items: center;
   margin: 0 15px;
+  width: 10px;
+  height: 10px;
 }
 .intro .tagline .separator > * {
   flex: 0;
